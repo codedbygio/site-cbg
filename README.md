@@ -20,7 +20,8 @@ Landing page profissional com foco em design, identidade visual, UX/UI e links r
 - [Next.js](https://nextjs.org/)
 - [React](https://react.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
-- [Lucide Icons](https://lucide.dev/) (ou outra biblioteca de ícones)
+- [Lucide Icons](https://lucide.dev/) 
+- [React Icons](https://react-icons.github.io/)
 
 ## 🚀 Como rodar localmente
 
