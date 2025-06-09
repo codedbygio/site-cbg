@@ -1,10 +1,38 @@
-# Codedbygio landing page
+# 🌐 Coded by Gio
 
-[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com/giovannaesamcsantos-5785s-projects/v0-codedbygio-landing-page)
+Landing page profissional com foco em design, identidade visual, UX/UI e links rápidos para redes sociais. Desenvolvido com **Next.js**, **Tailwind CSS** e componentes personalizados.
 
-## Deployment
+## 📸 Preview
 
-Your project is live at:
+![Preview do Site](https://github.com/codedbygio/site-cbg/assets/preview-image.png) <!-- Substitua ou delete essa linha caso não tenha imagem -->
 
-**[https://vercel.com/giovannaesamcsantos-5785s-projects/v0-codedbygio-landing-page](https://vercel.com/giovannaesamcsantos-5785s-projects/v0-codedbygio-landing-page)**
+## 🔗 Acesse o projeto
 
+[https://codedbygio.vercel.app](https://codedbygio.vercel.app)
+
+## 📁 Estrutura de Páginas
+
+- `/` – Landing page principal com apresentação de serviços
+- `/links` – Página com todos os links importantes (Instagram, Behance, GitHub, LinkedIn, Email)
+
+## ⚙️ Tecnologias Utilizadas
+
+- [Next.js](https://nextjs.org/)
+- [React](https://react.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide Icons](https://lucide.dev/) (ou outra biblioteca de ícones)
+
+## 🚀 Como rodar localmente
+
+```bash
+# Clone o repositório
+git clone https://github.com/codedbygio/site-cbg.git
+
+# Acesse a pasta do projeto
+cd site-cbg
+
+# Instale as dependências
+npm install
+
+# Rode o servidor local
+npm run dev
