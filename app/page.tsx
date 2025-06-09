@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
+import ScrollToTop from "@/components/ui/scrolltotop"
 import {
   Code,
   Palette,
@@ -43,6 +44,7 @@ import { SiTypescript, SiNextdotjs } from "react-icons/si";
 import { FaLightbulb, FaComments, FaHandsHelping, FaRegCalendarCheck, FaUserCheck } from "react-icons/fa";
 import { FaCode, FaTools } from "react-icons/fa";
 import { GiSkills } from "react-icons/gi";
+
 
 
 
@@ -237,6 +239,9 @@ export default function ModernCodedByGio() {
           </div>
         </div>
       </section>
+
+      {/* Botão para voltar ao topo */}
+      <ScrollToTop />
 
       {/* About Section */}
       <section id="about" className="relative z-10 py-20 px-6">
