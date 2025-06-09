@@ -258,7 +258,7 @@ export default function ModernCodedByGio() {
           {/* Texto sobre mim */}
           <div className="max-w-6xl mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-center text-yellow-400 mb-12">
-              Sobre Mim
+             Quem eu sou?
             </h2>
 
             <div className="max-w-3xl mx-auto space-y-6 text-gray-300 leading-relaxed mb-12">
