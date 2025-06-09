@@ -654,7 +654,7 @@ export default function ModernCodedByGio() {
                 className="relative pt-10 space-y-6"
             >
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_next" value="http://localhost:3000/obrigado" />
+              <input type="hidden" name="_next" value="https://site-cbg.vercel.app/obrigado" />
 
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
