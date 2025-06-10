@@ -5,6 +5,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import ScrollToTop from "@/components/ui/scrolltotop"
+import Gallery from "@/components/ui/Gallery"
+
 import {
   Code,
   Palette,
@@ -308,6 +310,8 @@ export default function ModernCodedByGio() {
         </div>
       </section>
 
+      <Gallery />
+
       {/* Skills Section */}
       <section id="setup" className="relative z-10 py-20 px-6 bg-gradient-to-br from-gray-900/20 to-black/40">
         <div className="max-w-7xl mx-auto">
@@ -477,89 +481,6 @@ export default function ModernCodedByGio() {
                 </CardContent>
               </Card>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Setup Section */}
-      <section id="setup" className="relative z-10 py-20 px-6 bg-gradient-to-br from-gray-900/20 to-black/40">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold">
-              <span className="bg-gradient-to-r from-yellow-400 to-amber-300 bg-clip-text text-transparent">
-                Meu Setup
-              </span>
-            </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-amber-400 mx-auto"></div>
-            <p className="text-xl text-gray-300 max-w-2xl mx-auto">
-              As ferramentas que uso para criar experiências incríveis
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-12">
-            {/* Hardware */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-yellow-400 mb-6 flex items-center">
-                <Cpu className="w-6 h-6 mr-3" />
-                Hardware
-              </h3>
-
-              <div className="grid gap-4">
-                {[
-                  { icon: Monitor, label: "Gabinete", value: 'Aigo azul "Aquário"' },
-                  { icon: Zap, label: "Water cooler", value: "Lian Li Galahad 240mm" },
-                  { icon: Database, label: "GPU", value: "RTX 3060" },
-                  { icon: MemoryStick, label: "RAM", value: "32GB" },
-                  { icon: Cpu, label: "CPU", value: "Ryzen 5 5600" },
-                  { icon: Layers, label: "Placa-mãe", value: "B450 VDH MAX" },
-                  { icon: HardDrive, label: "Armazenamento", value: "SSD 500GB + HD 1TB" },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-4 bg-gradient-to-r from-gray-900/60 to-black/60 backdrop-blur-sm rounded-xl border border-yellow-400/30 hover:border-yellow-400/60 transition-all duration-300 group"
-                  >
-                    <div className="bg-gradient-to-br from-yellow-400/20 to-amber-400/20 p-3 rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
-                      <item.icon className="w-5 h-5 text-yellow-400" />
-                    </div>
-                    <div>
-                      <p className="text-yellow-400 font-semibold text-sm">{item.label}</p>
-                      <p className="text-white">{item.value}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Periféricos */}
-            <div className="space-y-6">
-              <h3 className="text-2xl font-bold text-yellow-400 mb-6 flex items-center">
-                <Mouse className="w-6 h-6 mr-3" />
-                Periféricos
-              </h3>
-
-              <div className="grid gap-4">
-                {[
-                  { icon: Mouse, label: "Mouse", value: "Logitech G203" },
-                  { icon: Headphones, label: "Headset", value: "Logitech G432" },
-                  { icon: Keyboard, label: "Teclado", value: "Aula F75" },
-                  { icon: Monitor, label: "Monitor principal", value: 'AOC 27" IPS 144Hz' },
-                  { icon: Tablet, label: "Monitor secundário", value: "Samsung Tab S7 FE" },
-                ].map((item, index) => (
-                  <div
-                    key={index}
-                    className="flex items-center p-4 bg-gradient-to-r from-gray-900/60 to-black/60 backdrop-blur-sm rounded-xl border border-yellow-400/30 hover:border-yellow-400/60 transition-all duration-300 group"
-                  >
-                    <div className="bg-gradient-to-br from-yellow-400/20 to-amber-400/20 p-3 rounded-lg mr-4 group-hover:scale-110 transition-transform duration-300">
-                      <item.icon className="w-5 h-5 text-yellow-400" />
-                    </div>
-                    <div>
-                      <p className="text-yellow-400 font-semibold text-sm">{item.label}</p>
-                      <p className="text-white">{item.value}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
           </div>
         </div>
       </section>
