@@ -5,7 +5,8 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card, CardContent } from "@/components/ui/card"
 import ScrollToTop from "@/components/ui/scrolltotop"
-import Gallery from "@/components/ui/Gallery"
+import {Gallery} from "@/components/ui/Gallery"
+
 
 import {
   Code,
@@ -99,6 +100,7 @@ export default function ModernCodedByGio() {
             </span>
           </div>
 
+
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8">
             {[
@@ -117,6 +119,8 @@ export default function ModernCodedByGio() {
               </Link>
             ))}
           </div>
+
+
 
           {/* Mobile Menu Button */}
           <button

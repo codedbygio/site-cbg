@@ -8,19 +8,19 @@ const allProjects = [
     {
         title: "LF Body Piercer",
         description: "Identidade Visual e Landing Page",
-        image: "/public/projetos/lf-bodypiercer.png",
+        image: "/projetos/lf-bodypiercer.png",
         tags: ["Identidade Visual", "Landing Page"],
     },
     {
         title: "Cheiro na Cuca Bar",
         description: "Identidade Visual e Social Media",
-        image: "/public/projetos/cheiro-na-cuca.png",
+        image: "/projetos/cheiro-na-cuca.png",
         tags: ["Identidade Visual", "Social Media"],
     },
     {
         title: "Studio Create MKT",
         description: "Identidade Visual e Social Media",
-        image: "/public/projetos/studio-create.png",
+        image: "/projetos/studio-create.png",
         tags: ["Identidade Visual", "Social Media"],
     },
 ]
@@ -33,7 +33,7 @@ const projectLinks = {
     "Cheiro na Cuca Bar": "https://www.behance.net/gallery/224497967/Cheiro-na-Cuca-Bar",
 }
 
-export default function Gallery() {
+export function Gallery() {
     const [activeFilter, setActiveFilter] = useState("Todos")
     const [selectedProject, setSelectedProject] = useState(null)
 
@@ -58,7 +58,7 @@ Sua marca nasce do encontro entre o sensível e o marcante, unindo estética, se
                 {/* Título */}
                 <div className="text-center mb-10">
                     <h2 className="text-4xl md:text-5xl font-bold text-yellow-400">Portfólio</h2>
-                    <div className="w-24 h-1 bg-yellow-400 mx-auto mt-2" />
+                    <div className="w-24 h-1 bg-yellow-400 mx-auto mt-2"/>
                     <p className="text-lg text-gray-300 mt-4">
                         Conheça alguns dos projetos que desenvolvi com cuidado e estratégia.
                     </p>
@@ -89,7 +89,9 @@ Sua marca nasce do encontro entre o sensível e o marcante, unindo estética, se
                             className="rounded-lg overflow-hidden border border-yellow-400 hover:shadow-lg hover:shadow-yellow-500/20 transition flex flex-col"
                         >
                             <div
-                                onClick={() => setSelectedProject(project)}
+                                onClick={() => {
+                                    setSelectedProject (project);
+                                }}
                                 className="cursor-pointer"
                             >
                                 <Image
@@ -125,16 +127,16 @@ Sua marca nasce do encontro entre o sensível e o marcante, unindo estética, se
                 {selectedProject && (
                     <motion.div
                         className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-6"
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
+                        initial={{opacity: 0}}
+                        animate={{opacity: 1}}
+                        exit={{opacity: 0}}
                         onClick={() => setSelectedProject(null)}
                     >
                         <motion.div
                             className="bg-black border border-yellow-400 rounded-lg max-w-xl w-full p-6 relative flex flex-col items-center text-center"
-                            initial={{ scale: 0.9, opacity: 0 }}
-                            animate={{ scale: 1, opacity: 1 }}
-                            exit={{ scale: 0.9, opacity: 0 }}
+                            initial={{scale: 0.9, opacity: 0}}
+                            animate={{scale: 1, opacity: 1}}
+                            exit={{scale: 0.9, opacity: 0}}
                             onClick={(e) => e.stopPropagation()}
                         >
                             <button
@@ -148,8 +150,8 @@ Sua marca nasce do encontro entre o sensível e o marcante, unindo estética, se
                                     src={selectedProject.image}
                                     alt={selectedProject.title}
                                     className="object-cover w-full h-auto"
-                                    whileHover={{ scale: 1.1 }}
-                                    transition={{ duration: 0.3 }}
+                                    whileHover={{scale: 1.1}}
+                                    transition={{duration: 0.3}}
                                 />
                             </div>
                             <h2 className="text-2xl font-bold text-yellow-400 mb-2">
