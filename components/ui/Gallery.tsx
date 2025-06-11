@@ -3,24 +3,28 @@
 import { useState } from "react"
 import Image from "next/image"
 import { motion, AnimatePresence } from "framer-motion"
+import lfBody from "@/public/projetos/lf-bodypiercer.png"
+import cheiroNaCuca from "@/public/projetos/cheiro-na-cuca.png"
+import studioCreate from "@/public/projetos/studio-create.png"
+
 
 const allProjects = [
     {
         title: "LF Body Piercer",
         description: "Identidade Visual e Landing Page",
-        image: "/projetos/lf-bodypiercer.png",
+        image: lfBody,
         tags: ["Identidade Visual", "Landing Page"],
     },
     {
         title: "Cheiro na Cuca Bar",
         description: "Identidade Visual e Social Media",
-        image: "/projetos/cheiro-na-cuca.png",
+        image: cheiroNaCuca,
         tags: ["Identidade Visual", "Social Media"],
     },
     {
         title: "Studio Create MKT",
         description: "Identidade Visual e Social Media",
-        image: "/projetos/studio-create.png",
+        image: studioCreate,
         tags: ["Identidade Visual", "Social Media"],
     },
 ]
