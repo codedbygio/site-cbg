@@ -8,19 +8,19 @@ const allProjects = [
     {
         title: "LF Body Piercer",
         description: "Identidade Visual e Landing Page",
-        image: "/projetos/lf-bodypiercer.png",
+        image: "public/Projetos/lf-bodypiercer.png",
         tags: ["Identidade Visual", "Landing Page"],
     },
     {
         title: "Cheiro na Cuca Bar",
         description: "Identidade Visual e Social Media",
-        image: "/projetos/cheiro-na-cuca.png",
+        image: "public/Projetos/cheiro-na-cuca.png",
         tags: ["Identidade Visual", "Social Media"],
     },
     {
         title: "Studio Create MKT",
         description: "Identidade Visual e Social Media",
-        image: "/projetos/studio-create.png",
+        image: "public/Projetos/studio-create.png",
         tags: ["Identidade Visual", "Social Media"],
     },
 ]
