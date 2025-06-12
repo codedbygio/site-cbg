@@ -33,6 +33,16 @@ const projectLinks = {
     "Cheiro na Cuca Bar": "https://www.behance.net/gallery/224497967/Cheiro-na-Cuca-Bar",
 }
 
+const detailedDescriptions = {
+    "Studio Create MKT": `O Studio Create Marketing é uma agência criativa focada em estratégias de marketing digital, design visual e posicionamento de marca. Acreditamos no poder da comunicação autêntica e do design inteligente para gerar conexão, valor e resultados reais. Nossa identidade transmite inovação, profissionalismo e criatividade, refletindo o nosso compromisso em transformar ideias em experiências memoráveis.`,
+
+    "Cheiro na Cuca Bar": `Bar e mini mercado com pegada descontraída. Visual marcante em preto e amarelo, mascote carismático e tipografia ousada. Projeto pensado pra destacar promoções, combos e criar conexão rápida com o público. Comunicação direta, vibrante e autêntica.`,
+
+    "LF Body Piercer": `Larissa Santos é mais do que uma body piercer — é uma artista do detalhe.
+Com mãos leves e olhar preciso, ela transforma o corpo em tela e o piercing em expressão pessoal. Cada aplicação é um ritual de cuidado, presença e estilo.
+Sua marca nasce do encontro entre o sensível e o marcante, unindo estética, segurança e empatia em cada atendimento. Larissa acredita que autenticidade se revela nos pequenos detalhes — e que um piercing pode ser tanto um grito de liberdade quanto um sussurro de autocuidado.`,
+}
+
 export function Gallery() {
     const [activeFilter, setActiveFilter] = useState("Todos")
     const [selectedProject, setSelectedProject] = useState(null)
@@ -42,30 +52,24 @@ export function Gallery() {
             ? allProjects
             : allProjects.filter((p) => p.tags.includes(activeFilter))
 
-    const detailedDescriptions = {
-        "Studio Create MKT": `O Studio Create Marketing é uma agência criativa focada em estratégias de marketing digital, design visual e posicionamento de marca. Acreditamos no poder da comunicação autêntica e do design inteligente para gerar conexão, valor e resultados reais. Nossa identidade transmite inovação, profissionalismo e criatividade, refletindo o nosso compromisso em transformar ideias em experiências memoráveis.`,
-
-        "Cheiro na Cuca Bar": `Bar e mini mercado com pegada descontraída. Visual marcante em preto e amarelo, mascote carismático e tipografia ousada. Projeto pensado pra destacar promoções, combos e criar conexão rápida com o público. Comunicação direta, vibrante e autêntica.`,
-
-        "LF Body Piercer": `Larissa Santos é mais do que uma body piercer — é uma artista do detalhe.
-Com mãos leves e olhar preciso, ela transforma o corpo em tela e o piercing em expressão pessoal. Cada aplicação é um ritual de cuidado, presença e estilo.
-Sua marca nasce do encontro entre o sensível e o marcante, unindo estética, segurança e empatia em cada atendimento. Larissa acredita que autenticidade se revela nos pequenos detalhes — e que um piercing pode ser tanto um grito de liberdade quanto um sussurro de autocuidado.`,
-    }
-
     return (
-        <section className="py-20 px-6 bg-black relative z-10">
-            <div className="max-w-6xl mx-auto">
-                {/* Título */}
-                <div className="text-center mb-10">
-                    <h2 className="text-4xl md:text-5xl font-bold text-yellow-400">Portfólio</h2>
-                    <div className="w-24 h-1 bg-yellow-400 mx-auto mt-2"/>
-                    <p className="text-lg text-gray-300 mt-4">
-                        Conheça alguns dos projetos que desenvolvi com cuidado e estratégia.
+        <section className="py-20 px-6 bg-black text-white font-poppins relative z-10">
+            <div className="max-w-7xl mx-auto">
+                {/* Seção Minhas Skills */}
+                <div className="text-center mb-16 space-y-4">
+                    <h2 className="text-4xl md:text-5xl font-bold">
+              <span className="bg-gradient-to-r from-yellow-400 to-amber-300 bg-clip-text text-transparent">
+                Meus Projetos
+              </span>
+                    </h2>
+                    <div className="w-24 h-1 bg-gradient-to-r from-yellow-400 to-amber-400 mx-auto"></div>
+                    <p className="text-xl text-gray-300 max-w-2xl mx-auto">
+                        Aqui estao os projetos desenvolvidos por mim
                     </p>
                 </div>
 
                 {/* Filtros */}
-                <div className="flex justify-center gap-3 flex-wrap mb-10">
+                <div className="flex justify-center gap-4 flex-wrap mb-12">
                     {filters.map((filter) => (
                         <button
                             key={filter}
@@ -82,84 +86,92 @@ Sua marca nasce do encontro entre o sensível e o marcante, unindo estética, se
                 </div>
 
                 {/* Galeria */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
                     {filteredProjects.map((project) => (
-                        <div
+                        <motion.div
                             key={project.title}
-                            className="rounded-lg overflow-hidden border border-yellow-400 hover:shadow-lg hover:shadow-yellow-500/20 transition flex flex-col"
+                            whileHover={{ scale: 1.08, rotate: -1 }}
+                            className="relative group bg-gradient-to-br from-zinc-900 to-black border border-yellow-500 p-5 rounded-3xl shadow-[0_0_30px_rgba(255,255,0,0.1)] cursor-pointer hover:shadow-yellow-400/30 transition duration-300 ease-in-out flex flex-col"
+                            onClick={() => setSelectedProject(project)}
                         >
-                            <div
-                                onClick={() => {
-                                    setSelectedProject (project);
-                                }}
-                                className="cursor-pointer"
-                            >
+                            <div className="overflow-hidden rounded-xl flex-shrink-0">
                                 <Image
                                     src={project.image}
                                     alt={project.title}
                                     width={500}
                                     height={300}
-                                    className="w-full h-60 object-cover"
+                                    className="w-full h-52 object-cover rounded-xl transition-transform duration-500 group-hover:scale-110"
                                 />
-                                <div className="p-4 bg-black text-center flex flex-col items-center">
-                                    <h3 className="font-semibold text-yellow-300">{project.title}</h3>
-                                    <p className="text-sm text-gray-400 mb-4">{project.description}</p>
+                            </div>
+                            <div className="mt-4 flex-grow">
+                                <h3 className="text-2xl font-bold text-yellow-300 tracking-tight">
+                                    {project.title}
+                                </h3>
+                                <p className="text-gray-400 text-sm mt-1 leading-relaxed">
+                                    {project.description}
+                                </p>
+                                <div className="mt-3 flex flex-wrap gap-2">
+                                    {project.tags.map((tag) => (
+                                        <span
+                                            key={tag}
+                                            className="bg-yellow-400/10 text-yellow-300 text-xs px-3 py-1 rounded-full border border-yellow-300 backdrop-blur-md"
+                                        >
+                      #{tag}
+                    </span>
+                                    ))}
                                 </div>
                             </div>
-
-                            <div className="px-4 pb-4 bg-black">
-                                <a
-                                    href={projectLinks[project.title]}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="block text-center px-5 py-2 bg-yellow-400 text-black font-semibold rounded-full hover:bg-yellow-300 transition"
-                                >
-                                    Ver projeto
-                                </a>
-                            </div>
-                        </div>
+                        </motion.div>
                     ))}
                 </div>
             </div>
 
-            {/* Modal */}
+            {/* Modal com detalhes do projeto */}
             <AnimatePresence>
                 {selectedProject && (
                     <motion.div
-                        className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 p-6"
-                        initial={{opacity: 0}}
-                        animate={{opacity: 1}}
-                        exit={{opacity: 0}}
+                        className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-6 overflow-y-auto backdrop-blur"
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
                         onClick={() => setSelectedProject(null)}
                     >
                         <motion.div
-                            className="bg-black border border-yellow-400 rounded-lg max-w-xl w-full p-6 relative flex flex-col items-center text-center"
-                            initial={{scale: 0.9, opacity: 0}}
-                            animate={{scale: 1, opacity: 1}}
-                            exit={{scale: 0.9, opacity: 0}}
+                            className="bg-gradient-to-b from-zinc-950 to-black rounded-2xl p-8 max-w-2xl w-full relative border border-yellow-400 shadow-lg shadow-yellow-500/20"
+                            initial={{ scale: 0.8, opacity: 0 }}
+                            animate={{ scale: 1, opacity: 1 }}
+                            exit={{ scale: 0.8, opacity: 0 }}
                             onClick={(e) => e.stopPropagation()}
                         >
                             <button
                                 onClick={() => setSelectedProject(null)}
-                                className="absolute top-3 right-4 text-yellow-400 text-xl"
+                                className="absolute top-3 right-4 text-yellow-400 text-3xl font-bold"
                             >
                                 ×
                             </button>
-                            <div className="overflow-hidden rounded-lg mb-4 cursor-pointer w-full max-w-[600px]">
-                                <motion.img
-                                    src={selectedProject.image}
-                                    alt={selectedProject.title}
-                                    className="object-cover w-full h-auto"
-                                    whileHover={{scale: 1.1}}
-                                    transition={{duration: 0.3}}
-                                />
-                            </div>
-                            <h2 className="text-2xl font-bold text-yellow-400 mb-2">
+                            <Image
+                                src={selectedProject.image}
+                                alt={selectedProject.title}
+                                width={800}
+                                height={500}
+                                className="w-full h-auto rounded-xl mb-6"
+                            />
+                            <h2 className="text-3xl font-bold text-yellow-300 mb-2 uppercase">
                                 {selectedProject.title}
                             </h2>
-                            <p className="text-gray-300 whitespace-pre-line">
+                            <p className="text-gray-300 text-md leading-relaxed whitespace-pre-line">
                                 {detailedDescriptions[selectedProject.title]}
                             </p>
+                            {projectLinks[selectedProject.title] && (
+                                <a
+                                    href={projectLinks[selectedProject.title]}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="mt-6 inline-block px-6 py-2 bg-yellow-400 text-black font-bold rounded-full hover:bg-yellow-300 transition"
+                                >
+                                    Ver Projeto
+                                </a>
+                            )}
                         </motion.div>
                     </motion.div>
                 )}
